@@ -15,11 +15,8 @@ h1 {
 	height: 50px;	
 }
 
-.flex-parent {
+.center {
 	display: flex;
-}
-
-.jc-center {
 	justify-content: center;
 }
 

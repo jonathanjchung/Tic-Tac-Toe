@@ -7,7 +7,7 @@ var board = [
     ["-", "-", "-"]
 ];
 var currentTurn = 'X';
-var icon = 'x image.png';
+var icon = 'images\\x image.png';
 var buttons = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9'];
 
 function buttonPressed(id) { 
@@ -63,31 +63,31 @@ function swapTurn(id) {
     if (currentTurn == 'X') {
         document.getElementById(id).src = icon;
         currentTurn = 'O';
-        icon = 'o image.png';
+        icon = 'images\\o image.png';
     } else {
         document.getElementById(id).src = icon;
         currentTurn = 'X';
-        icon = 'x image.png';
+        icon = 'images\\x image.png';
     }
 }
 
 function checkWinner(game, player) {
     if (board[0][0] == currentTurn && board[0][1] == currentTurn && board[0][2] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[1][0] == currentTurn && board[1][1] == currentTurn && board[1][2] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[2][0] == currentTurn && board[2][1] == currentTurn && board[2][2] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[0][0] == currentTurn && board[1][0] == currentTurn && board[2][0] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[0][1] == currentTurn && board[1][1] == currentTurn && board[2][1] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[0][2] == currentTurn && board[1][2] == currentTurn && board[2][2] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[0][0] == currentTurn && board[1][1] == currentTurn && board[2][2] == currentTurn) {
-        win();
+        winMessage();
     } else if (board[0][2] == currentTurn && board[1][1] == currentTurn && board[2][0] == currentTurn) {
-        win();
+        winMessage();
     } else if (checkForTie()) {
         var text = document.getElementById('outcome');
         text.textContent = 'Tie';
@@ -101,7 +101,7 @@ function disableBoard() {
     }
 }
 
-function win() {
+function winMessage() {
     disableBoard();
     var text = document.getElementById('outcome');
     text.textContent = currentTurn + ' win';
@@ -126,14 +126,14 @@ function resetGame() {
         ["-", "-", "-"]
     ];
     currentTurn = 'X';
-    icon = 'x image.png';
+    icon = 'images\\x image.png';
     var text = document.getElementById('outcome');
 
     text.style.display = 'none';
     text.textContent = 'Sample Text';
 
     for(let i = 0; i < buttons.length; i++) {
-        document.getElementById(buttons[i]).src = 'square.png';
+        document.getElementById(buttons[i]).src = 'images\\square.png';
         document.getElementById(buttons[i]).disabled = false;
     }
 }
